@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <!-- ヘッダやフッタなど共通して使用される部分を定義する -->
+  <head>
+    <title>Bookers1</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <!-- 各viewのhtmlファイルが読み込まれる -->
+    <%= yield %>
+  </body>
+</html>

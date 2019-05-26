@@ -1,0 +1,58 @@
+<header></header>
+
+<main>
+     <!-- 成功した場合成功メッセージ(destroy)を表示 -->
+    <% if flash[:notice] %>
+        <div class="flash">
+            <%= flash[:notice] %>
+        </div>
+    <% end %>
+    <h1>Books</h1>
+    <!-- セルの間隔を2pxずつ空ける -->
+    <table>
+        <thead>
+            <tr align=center>
+            <th>Title</th>
+            <th>Body</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @books.each do |book| %>
+                <tr>
+                    <td width="20%"><%= book.title %></td>
+                    <td width="60%"><%= book.body %></td>
+                    <td width="7%">
+                        <%= link_to 'Show', book, class: "show_#{book.id}" %>
+                    </td>
+                    <td width="6%">
+                        <%= link_to 'Edit', edit_book_path(book), class: "edit_#{book.id}" %>
+                    </td>
+                    <td width="7%">
+                        <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' }, class: "destroy_#{book.id}" %>
+                    </td>
+                </tr>
+             <% end %>
+        </tbody>
+    </table>
+
+    <!-- 新規投稿欄 -->
+    <h2>New book</h2>
+    <!-- form_for部分 -->
+    <%= form_for(@book) do |f| %>
+
+        <div class="field">
+            <%= f.label :title %><br>
+            <%= f.text_field :title, class: "book_title" %>
+        </div>
+        <div class="filed">
+            <%= f.label :body %><br>
+            <%= f.text_area :body, class: "book_body" %>
+        </div>
+        <div class="create-book">
+            <%= f.submit 'Create Book' %>
+        </div>
+    <% end %>
+
+</main>
+
+

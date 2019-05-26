@@ -1,0 +1,69 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+    padding: 33px;
+}
+
+table {
+    width: 100%;
+    border-spacing: 4px;  /*間隔の大きさ(左右 上下)*/
+}
+
+h1 {
+    padding-bottom: 5px;
+}
+
+h2 {
+    padding-top: 8px;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.flash {
+    color: blue;
+    margin: 5px 0 10px 5px;
+}
+
+.field, .create-book, .update-book {
+    padding-top: 8px;
+}
+
+.show, .action {
+    padding: 10px;
+}
+
+.book-headline{
+    width: 100%;
+}
+
+.book-box{
+    width: 100%;
+}
+
+
+

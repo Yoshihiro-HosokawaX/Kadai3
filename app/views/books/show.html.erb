@@ -1,0 +1,25 @@
+
+<!-- 投稿詳細ページ -->
+
+<header></header>
+
+<main>
+    <!-- 成功した場合成功メッセージ(update または create)を表示 -->
+    <% if flash[:notice] %>
+        <div class="flash">
+            <%= flash[:notice] %>
+        </div>
+    <% end %>
+    <div class="show">
+        <h4 style="display: inline">Title</h4>: <%= @book.title %>
+    </div>
+    <div class="show">
+        <h4 style="display: inline">Body</h4>: <%= @book.body %>
+    </div>
+    <div class="action">
+        <!-- 投稿編集へのリンク -->
+        <%= link_to 'Edit', edit_book_path(@book), class: "edit_#{@book.id}" %> | 
+        <!-- 戻るボタン(転移先のURLはルートディレクトリ) -->
+        <%= link_to 'Back', "/", class: "back" %>
+    </div>
+</main>
